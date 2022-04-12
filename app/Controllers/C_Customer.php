@@ -19,4 +19,11 @@ class C_Customer extends BaseController
         return view('customer/get',$data);
 
     }
+
+    public function create()
+    {
+    	return view('customer/add');
+    }
+
+
 }

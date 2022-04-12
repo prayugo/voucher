@@ -14,8 +14,9 @@
                           <p class="mb-4">
                             <span class="fw-bold"></span>
                           </p>
-
-                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">Tambah Data</a>
+                          <div class="section-header-button">
+                             <a href="<?=site_url('customer/add')?>" class="btn btn-sm btn-outline-primary">Tambah Data</a>
+                          </div>
                         </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">
@@ -55,7 +56,7 @@
                          <?php foreach ($customer as $key => $value) : ?>
                         <tr>
                           <td><?=$value->name_customer?></td>
-                          <td><?=$value->alamat?></td>
+                          <td><?=$value->address?></td>
                           <td><?=$value->no_hp?></td>
                           <td><span class="badge bg-label-primary me-1">Active</span></td>
                           <td>
