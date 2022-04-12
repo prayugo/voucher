@@ -25,12 +25,13 @@ CREATE TABLE `tdcustomer` (
   `name_customer` varchar(50) DEFAULT NULL,
   `alamat` varchar(100) DEFAULT NULL,
   `no_hp` char(13) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`customer_id`),
-  KEY `user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tdcustomer` */
+
+insert  into `tdcustomer`(`customer_id`,`name_customer`,`alamat`,`no_hp`) values 
+(1,'andi','gresik','123');
 
 /*Table structure for table `tdproduct` */
 
@@ -112,14 +113,18 @@ CREATE TABLE `tdtransactionvoucher` (
 DROP TABLE IF EXISTS `tduser`;
 
 CREATE TABLE `tduser` (
-  `id_user` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid_cs` int(11) NOT NULL,
   `user_name` varchar(50) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tduser` */
+
+insert  into `tduser`(`id`,`userid_cs`,`user_name`,`password`,`level`) values 
+(1,1,'andi','admin','Admin');
 
 /*Table structure for table `tdvoucher` */
 
