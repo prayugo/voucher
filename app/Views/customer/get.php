@@ -34,6 +34,29 @@
                   </div>
                 </div>
                 
+                <?php if(session()->getFlashdata('success')) :?>
+                <div class="alert alert-success alert-dismissible show fade">
+                  <div class="alert-body">   
+                    <a class="close" data-dismis="alert"></a>
+                    <b>Success !</b>
+                    <?=session()->getFlashdata('success')?> 
+                  </div>
+                </div>
+                <?php endif; ?>
+
+                 <!-- secure inpuet --> 
+                <?php if(session()->getFlashdata('error')) :?>
+                <div class="alert alert-danger alert-dismissible show fade">
+                  <div class="alert-body">   
+                    <a class="close" data-dismis="alert"></a>
+                    <b>Error !</b>
+                    <?=session()->getFlashdata('error')?> 
+                  </div>
+                </div>
+                <?php endif; ?>
+
+
+
                    <!-- Isi dari content -->
                 <!-- Bordered Table -->
                 <div class="col-lg-12 mb-4 order-0">

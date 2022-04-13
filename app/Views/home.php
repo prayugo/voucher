@@ -1,7 +1,7 @@
 <?= $this->extend('layout/default') ?>
 
 <?= $this->section('title') ?>
-<title>E-Voucher Logmart</title>
+<title>E-Voucher</title>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>

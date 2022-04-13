@@ -25,5 +25,19 @@ class C_Customer extends BaseController
     	return view('customer/add');
     }
 
+    public function simpan_data()
+    {
+
+            // st1
+        $data=$this->request->getpost();
+
+        $builder = $this->db->table('tdcustomer')-> insert($data);
+
+        if ($this->db->affectedRows()>0) {
+            return redirect()-> to(site_url('customer'))->with('success','Data Berhasil Ditambahkan');
+        }
+
+
+    }
 
 }
