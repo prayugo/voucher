@@ -23,15 +23,20 @@ DROP TABLE IF EXISTS `tdcustomer`;
 CREATE TABLE `tdcustomer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name_customer` varchar(50) DEFAULT NULL,
-  `alamat` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
   `no_hp` char(13) DEFAULT NULL,
+  `user_name` varchar(50) DEFAULT NULL,
+  `password` char(255) DEFAULT NULL,
+  `foto` varchar(255) DEFAULT NULL,
+  `level` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tdcustomer` */
 
-insert  into `tdcustomer`(`customer_id`,`name_customer`,`alamat`,`no_hp`) values 
-(1,'andi','gresik','123');
+insert  into `tdcustomer`(`customer_id`,`name_customer`,`email`,`address`,`no_hp`,`user_name`,`password`,`foto`,`level`) values 
+(11,'Budi Sudarsono','bdi@mail.com','Surabaya','086765454323','bdi','jhgyt',NULL,'Superadmin');
 
 /*Table structure for table `tdproduct` */
 
@@ -100,10 +105,10 @@ CREATE TABLE `tdtransactionvoucher` (
   `create_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `create_by` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`transactionvoucher_id`),
-  KEY `voucher_trans` (`customer_id`),
-  KEY `voucher` (`voucher_id`),
-  CONSTRAINT `voucher` FOREIGN KEY (`voucher_id`) REFERENCES `tdvoucher` (`transaction_id`),
-  CONSTRAINT `voucher_trans` FOREIGN KEY (`customer_id`) REFERENCES `tdcustomer` (`customer_id`)
+  KEY `vc_trans` (`voucher_id`),
+  KEY `voucher_customer` (`customer_id`),
+  CONSTRAINT `vc_trans` FOREIGN KEY (`voucher_id`) REFERENCES `tdvoucher` (`voucher_id`),
+  CONSTRAINT `voucher_customer` FOREIGN KEY (`customer_id`) REFERENCES `tdcustomer` (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tdtransactionvoucher` */
@@ -132,7 +137,6 @@ DROP TABLE IF EXISTS `tdvoucher`;
 
 CREATE TABLE `tdvoucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
-  `transaction_id` int(11) NOT NULL,
   `kode_voucher` char(50) DEFAULT NULL,
   `voucher_name` varchar(100) DEFAULT NULL,
   `value_voucher` varchar(50) DEFAULT NULL,
@@ -140,11 +144,13 @@ CREATE TABLE `tdvoucher` (
   `modified_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by` varchar(50) DEFAULT NULL,
   `created_by` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`voucher_id`),
-  KEY `voucher` (`transaction_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`voucher_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tdvoucher` */
+
+insert  into `tdvoucher`(`voucher_id`,`kode_voucher`,`voucher_name`,`value_voucher`,`created_date`,`modified_date`,`modified_by`,`created_by`) values 
+(1,'VC675','Voucher Puasa','145000','2022-04-15 05:37:43','2022-04-15 05:38:13',NULL,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

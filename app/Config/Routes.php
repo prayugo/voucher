@@ -39,12 +39,15 @@ $routes->get('/', 'Home::index');
 $routes->get('transaction', 'transaction::index');
 
 $routes->get('customer', 'C_Customer::index');
-$routes->get('customer/add', 'C_Customer::create');
+$routes->get('customer/add', 'C_Customer::create_customer');
 $routes->post('customer', 'C_Customer::simpan_data');
 
 
 $routes->get('product', 'C_Product::index');
+
+
 $routes->get('voucher', 'C_Voucher::index');
+$routes->get('voucher/add', 'C_Voucher::create_voucher');
 
 
 /*

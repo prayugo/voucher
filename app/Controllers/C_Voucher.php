@@ -5,7 +5,16 @@ namespace App\Controllers;
 class C_Voucher extends BaseController
 {
     public function index()
-    {
-        return view('voucher/get');
+    {     
+        $query = $this->db->query("select * from tdvoucher");
+        $data['voucher']=$query->getresult();
+        return view('voucher/get',$data);
+       
     }
+
+    public function create_voucher(){
+    	return view ('voucher/add');
+    }
+
+
 }

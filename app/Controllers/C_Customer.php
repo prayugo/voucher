@@ -20,7 +20,7 @@ class C_Customer extends BaseController
 
     }
 
-    public function create()
+    public function create_customer()
     {
     	return view('customer/add');
     }
