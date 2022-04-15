@@ -15,8 +15,8 @@
                             <span class="fw-bold"></span>
                           </p>
                           <div class="section-header-button">
-                             <a href="<?=site_url('customer/add')?>" class="btn btn-sm btn-outline-primary">Tambah Data</a>
-                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+                             
+                             <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ModalTambah" data-bs-whatever="@getbootstrap">Tambah Data</button>
                           </div>
                         </div>
                       </div>
@@ -110,36 +110,43 @@
 
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ModalTambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Voucher</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+       <hr class="my-0" />
       <div class="modal-body">
-        <form>
+        <form action="<?=base_url('voucher/add')?>" method="POST">
+          <div class="form-group">
           <div class="row mb-3">
-            <label for="recipient-name" class="col-sm-2 col-form-label">Recipient:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-sm-3 col-form-label">
+              <?= $kalimat = "kode voucher";
+              $ubah_kalimat = ucwords($kalimat);?></label>
+            <div class="col-lg-7">
+              <input type="text" class="form-control" id="recipient-name" name="kode_voucher">
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="basic-default-name" placeholder="John Doe" />
+            <label class="col-sm-3 col-form-label" for="basic-default-name">Nama Voucher</label>
+            <div class="col-lg-7">
+              <input type="text" class="form-control" id="basic-default-name" name="voucher_name"/>
             </div>
           </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+          <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" for="basic-default-name">Nilai Voucher</label>
+            <div class="col-lg-7">
+              <input type="text" class="form-control" id="basic-default-name" name="value_voucher" />
+            </div>
+          </div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="Submit" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
