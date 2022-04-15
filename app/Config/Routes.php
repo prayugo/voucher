@@ -47,7 +47,8 @@ $routes->get('product', 'C_Product::index');
 
 
 $routes->get('voucher', 'C_Voucher::index');
-$routes->get('voucher/add', 'C_Voucher::create_voucher');
+// $routes->get('voucher', 'C_Voucher::create_voucher');
+// $routes->post('voucher/tambah', 'C_Voucher::tambah');
 
 
 /*

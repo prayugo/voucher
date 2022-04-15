@@ -10,13 +10,13 @@
                     <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary">Anda Berada Di Halaman Data Pelanggan 🎉</h5>
+                          <h5 class="card-title text-primary">Anda Berada Di Halaman Data Voucher 🎉</h5>
                           <p class="mb-4">
                             <span class="fw-bold"></span>
                           </p>
                           <div class="section-header-button">
                              
-                             <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ModalTambah" data-bs-whatever="@getbootstrap">Tambah Data</button>
+                             <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ModalTambah">Tambah Data</button>
                           </div>
                         </div>
                       </div>
@@ -108,49 +108,58 @@
 
 <!-- modal -->
 
-
-
 <div class="modal fade" id="ModalTambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Voucher</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-       <hr class="my-0" />
+      <hr class="my-0" />
       <div class="modal-body">
-        <form action="<?=base_url('voucher/add')?>" method="POST">
-          <div class="form-group">
+
+
+
+        <form action="<?=base_url('C_Voucher/save');?>" method="post">
+          <?= csrf_field() ?>
+          <div class="form-group mb-0">
           <div class="row mb-3">
-            <label for="recipient-name" class="col-sm-3 col-form-label">
-              <?= $kalimat = "kode voucher";
-              $ubah_kalimat = ucwords($kalimat);?></label>
+            <label for="kode_voucher" class="col-sm-3 col-form-label">Kode Voucher</label>
             <div class="col-lg-7">
-              <input type="text" class="form-control" id="recipient-name" name="kode_voucher">
+              <input type="text" class="form-control" id="kode_voucher" name="kode_voucher" required autofocus>
             </div>
           </div>
-          <div class="row mb-3">
-            <label class="col-sm-3 col-form-label" for="basic-default-name">Nama Voucher</label>
-            <div class="col-lg-7">
-              <input type="text" class="form-control" id="basic-default-name" name="voucher_name"/>
             </div>
-          </div>
+
+          <div class="form-group mb-0">  
           <div class="row mb-3">
-            <label class="col-sm-3 col-form-label" for="basic-default-name">Nilai Voucher</label>
+            <label for="voucher_name" class="col-sm-3 col-form-label">Nama Voucher</label>
             <div class="col-lg-7">
-              <input type="text" class="form-control" id="basic-default-name" name="value_voucher" />
+              <input type="text" class="form-control" id="voucher_name" name="voucher_name" required autofocus>
             </div>
           </div>
           </div>
-        </form>
-      </div>
+
+          <div class="form-group mb-0">
+          <div class="row mb-3">
+            <label for="value_voucher" class="col-sm-3 col-form-label">Nilai Voucher</label>
+            <div class="col-lg-7">
+              <input type="number" class="form-control" id="value_voucher" name="value_voucher" required autofocus>
+            </div>
+            </div>
+            </div>
+
+
+      <hr class="my-0" />
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="Submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
     </div>
+    </form>
   </div>
 </div>
+
 <!-- end of modal -->
 
 <?= $this->endSection() ?>
