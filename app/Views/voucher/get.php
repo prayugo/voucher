@@ -284,8 +284,8 @@
     <!-- End Modal Edit Product-->
 
 
-<script src="<?=base_url()?>/js/jquery.min.js"></script>
-<script src="<?=base_url()?>/js/bootstrap.bundle.min.js"></script>
+<script src="<?=base_url()?>/template/assets/js/jquery.min.js"></script>
+<script src="<?=base_url()?>/template/assets/js/bootstrap.bundle.min.js"></script>
 <script>
     $(document).ready(function(){
  
@@ -298,8 +298,8 @@
             const nilai = $(this).data('nilai');
             // Set data to Form Edit
             $('#voucher_id').val(id);
-            $('.modal-body #kode_voucher').val(name);
-            $('#voucher_name').val(price);
+            $('.modal-body #kode_voucher').val(kode);
+            $('.modal-body #voucher_name').val(nama);
             $('#value_voucher').val(category).trigger('change');
             // Call Modal Edit
             $('#editModal').modal('show');
