@@ -31,19 +31,22 @@ CREATE TABLE `tdcustomer` (
   `foto` varchar(255) DEFAULT NULL,
   `level` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tdcustomer` */
 
 insert  into `tdcustomer`(`customer_id`,`name_customer`,`email`,`address`,`no_hp`,`user_name`,`password`,`foto`,`level`) values 
-(11,'Budi Sudarsono','bdi@mail.com','Surabaya','086765454323','bdi','jhgyt',NULL,'Superadmin');
+(11,'Budi Sudarsono','bdi@mail.com','Surabaya','086765454323','bdi','jhgyt',NULL,'Superadmin'),
+(12,'tyt','tyty','tyt','tyty','yty','tytyty',NULL,'Superadmin'),
+(13,' h','hjh','hjhjhjhj','jhj','hjhj','hjhjh',NULL,'Superadmin'),
+(14,'Ali','gjh','jh','jhjh','jhj','hj',NULL,'Superadmin');
 
 /*Table structure for table `tdproduct` */
 
 DROP TABLE IF EXISTS `tdproduct`;
 
 CREATE TABLE `tdproduct` (
-  `product_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `name_product` varchar(50) DEFAULT NULL,
   `price` varchar(50) DEFAULT NULL,
   `create_by` varchar(50) DEFAULT NULL,
@@ -51,9 +54,15 @@ CREATE TABLE `tdproduct` (
   `modified_by` varchar(50) DEFAULT NULL,
   `modified_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tdproduct` */
+
+insert  into `tdproduct`(`product_id`,`name_product`,`price`,`create_by`,`created_date`,`modified_by`,`modified_date`) values 
+(1,'Mie Sedap Goreng','5000',NULL,'2022-04-16 22:47:04',NULL,'2022-04-16 22:47:04'),
+(2,'Sabun Lifeboy','2500',NULL,'2022-04-16 22:47:21',NULL,'2022-04-16 22:47:21'),
+(3,'bhJH','HJH',NULL,'2022-04-16 23:17:37',NULL,'2022-04-16 23:17:37'),
+(4,'Kopi Kapal Api','15000',NULL,'2022-04-16 23:17:55',NULL,'2022-04-16 23:17:55');
 
 /*Table structure for table `tdtotaltransaction` */
 
@@ -83,11 +92,10 @@ CREATE TABLE `tdtransaction` (
   `created_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`transaction_id`),
   KEY `idtt_trans` (`idtt_trans`),
-  KEY `product_id` (`product_id`),
   KEY `customer` (`customer_id`),
+  KEY `product_id` (`product_id`),
   CONSTRAINT `customer` FOREIGN KEY (`customer_id`) REFERENCES `tdcustomer` (`customer_id`),
-  CONSTRAINT `idtt_trans` FOREIGN KEY (`idtt_trans`) REFERENCES `tdtotaltransaction` (`idtt_trans`),
-  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `tdproduct` (`product_id`)
+  CONSTRAINT `idtt_trans` FOREIGN KEY (`idtt_trans`) REFERENCES `tdtotaltransaction` (`idtt_trans`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tdtransaction` */
@@ -145,12 +153,15 @@ CREATE TABLE `tdvoucher` (
   `modified_by` varchar(50) DEFAULT NULL,
   `created_by` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`voucher_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tdvoucher` */
 
 insert  into `tdvoucher`(`voucher_id`,`kode_voucher`,`voucher_name`,`value_voucher`,`created_date`,`modified_date`,`modified_by`,`created_by`) values 
-(1,'VC675','Voucher Puasa','145000','2022-04-15 05:37:43','2022-04-15 05:38:13',NULL,NULL);
+(16,'687687','iuyiuy','7987','2022-04-16 15:43:25','2022-04-16 15:43:25',NULL,NULL),
+(17,'686','yiuy','798','2022-04-16 15:56:55','2022-04-16 15:56:55',NULL,NULL),
+(18,'hjhj','uyu7','6766','2022-04-16 20:56:47','2022-04-16 20:56:47',NULL,NULL),
+(19,'787','jhk','6','2022-04-16 21:45:57','2022-04-16 21:45:57',NULL,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
