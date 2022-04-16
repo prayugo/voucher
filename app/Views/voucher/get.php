@@ -284,8 +284,8 @@
     <!-- End Modal Edit Product-->
 
 
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="<?=base_url()?>/js/jquery.min.js"></script>
+<script src="<?=base_url()?>/js/bootstrap.bundle.min.js"></script>
 <script>
     $(document).ready(function(){
  
