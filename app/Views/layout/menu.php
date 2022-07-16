@@ -1,7 +1,11 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="<?=site_url()?>" class="app-brand-link">
-              <span class="app-brand-logo demo">
+            <a href="" class="app-brand-link">
+              <img src="<?=base_url()?>/template/assets/img/elements/logo_logmart.jpeg"
+
+                height="40"
+              />
+              <!-- <span class="app-brand-logo demo">
                 <svg
                   width="25"
                   viewBox="0 0 25 42"
@@ -55,8 +59,8 @@
                     </g>
                   </g>
                 </svg>
-              </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">E-Voucher</span>
+              </span> -->
+              <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2">E-Vouchrr</span> -->
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -76,12 +80,42 @@
             </li>
 
             <li class="menu-item">
-              <a href="<?=site_url('transaction')?>" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-purchase-tag-alt"></i>
-                <div data-i18n="Layouts">Transaction</div>
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bxs-hourglass-bottom"></i>
+                <div data-i18n="Layouts">Process</div>
               </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="<?=site_url('generate_transaction')?>" class="menu-link">
+                    <div data-i18n="">Generate Transaction</div>
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="<?=site_url('generate_voucher')?>" class="menu-link">
+                    <div data-i18n="">Generate Voucher</div>
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="<?=site_url('detail_transaction')?>" class="menu-link">
+                    <div data-i18n="">Detail Transaction</div>
+                  </a>
+                </li>
+              </ul>
+
+
+
             </li>
 
+              
+
+            
 
             <!-- Layouts -->
             <li class="menu-item">

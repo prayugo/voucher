@@ -77,6 +77,7 @@
 
         <!-- Layout container -->
         <div class="layout-page">
+          
           <!-- Navbar -->
 
           <nav
@@ -91,7 +92,7 @@
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-              <div class="navbar-nav align-items-center">
+              <!-- <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
                   <i class="bx bx-search fs-4 lh-0"></i>
                   <input
@@ -101,12 +102,12 @@
                     aria-label="Search..."
                   />
                 </div>
-              </div>
+              </div> -->
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
-                <li class="nav-item lh-1 me-3">
+                <!-- <li class="nav-item lh-1 me-3">
                   <a
                     class="github-button"
                     href="https://github.com/themeselection/sneat-html-admin-template-free"
@@ -116,8 +117,8 @@
                     aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
                     >Star</a
                   >
-                </li>
-
+                </li> -->
+                  
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -236,11 +237,15 @@
 
     <!-- Main JS -->
     <script src="<?=base_url()?>/template/assets/js/main.js"></script>
+    <script src="<?=base_url()?>/template/assets/js/jquery.min.js"></script>
 
     <!-- Page JS -->
     <script src="<?=base_url()?>/template/assets/js/dashboards-analytics.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- myscript. -->
+    <script src="<?=base_url()?>/template/assets/js/product.js"></script>
   </body>
 </html>

@@ -284,48 +284,6 @@
     <!-- End Modal Edit Product-->
 
 
-<script src="<?=base_url()?>/template/assets/js/jquery.min.js"></script>
-<script src="<?=base_url()?>/template/assets/js/bootstrap.bundle.min.js"></script>
-<script>
-    $(document).ready(function(){
- 
-        // get Edit Product
-        $('.tombolUbah').on('click',function(){
-            // get data from button edit
-            const id = $(this).data('id');
-            const kode = $(this).data('kode');
-            const nama = $(this).data('nama');
-            const nilai = $(this).data('nilai');
-            // Set data to Form Edit
-            $('#voucher_id').val(id);
-            $('.modal-body #kode_voucher').val(kode);
-            $('.modal-body #voucher_name').val(nama);
-            $('#value_voucher').val(category).trigger('change');
-            // Call Modal Edit
-            $('#editModal').modal('show');
-        });
- 
-        // get Delete Product
-        $('.btn-delete').on('click',function(){
-            // get data from button edit
-            const id = $(this).data('id');
-            // Set data to Form Edit
-            $('.productID').val(id);
-            // Call Modal Edit
-            $('#deleteModal').modal('show');
-        });
-         
-    });
-
-</script>
-
-
-
-
-
-
-
-
 
 
 

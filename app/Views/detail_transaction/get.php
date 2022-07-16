@@ -10,13 +10,13 @@
                     <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary">Anda Berada Di Halaman Data Produk 🎉</h5>
+                          <h5 class="card-title text-primary">Anda Berada Di Halaman Detail Transaction 🎉</h5>
                           <p class="mb-4">
                             <span class="fw-bold"></span>
                           </p>
                           <div class="section-header-button">
                              
-                             <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ModalTambah">Tambah Data</button>
+                             <!-- <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ModalTambah">Tambah Data</button> -->
                           </div>
                         </div>
                       </div>

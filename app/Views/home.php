@@ -1,10 +1,12 @@
 <?= $this->extend('layout/default') ?>
 
 <?= $this->section('title') ?>
-<title>E-Voucher</title>
+<title>LogMart</title>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+
+
     <div class="container-xxl flex-grow-1 container-p-y">
               <div class="row">
                 <div class="col-lg-12 mb-4 order-0">
@@ -17,12 +19,13 @@
                             You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
                             your profile.
                           </p>
-
                           <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
                         </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">
                         <div class="card-body pb-0 px-0 px-md-4">
+
+
                           <img
                             src="<?=base_url()?>/template/assets/img/illustrations/man-with-laptop-light.png"
                             height="140"
@@ -34,14 +37,16 @@
                       </div>
                     </div>
                   </div>
+
+
                 </div>
                 
                    <!-- Isi dari content -->
                 <h1>Hello World!12</h1>
-               
-               
               </div>
-             
             </div>
+
+
+
 
 <?= $this->endSection() ?>
